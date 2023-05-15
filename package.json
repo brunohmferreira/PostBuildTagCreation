@@ -1,0 +1,10 @@
+{
+  "name": "buildtagcreationdecorator",
+  "version": "1.0.0",
+  "description": "Adds build tags.",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "Bruno Ferreira",
+  "license": "ISC"
+}

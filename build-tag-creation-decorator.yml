@@ -1,0 +1,15 @@
+steps:
+- ${{ if eq(variables['Decorator.BuildTagCreation.Enabled'], True) }}:  
+  - task: tagBuildOrRelease@0
+    displayName: 'Tag: Build $(Agent.JobName) [Build: Tag Creation](injected from decorator)' 
+    condition: succeeded()
+    inputs:
+      type: 'Build'
+      tags: '$(Agent.JobName)'
+
+  - task: tagBuildOrRelease@0
+    displayName: 'Tag: Build Liberação [Build: Tag Creation](injected from decorator)' 
+    condition: and(succeeded(), or(contains(variables['Build.SourceBranch'],'/releases/'), contains(variables['Build.SourceBranch'],'/hotfixes/')))
+    inputs:
+      type: 'Build'
+      tags: 'Liberação'

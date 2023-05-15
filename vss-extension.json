@@ -1,0 +1,35 @@
+{
+    "manifestVersion": 1,
+    "id": "buildtagcreationdecorator",
+    "name": "Build: Tag Creation",
+    "version": "1.1.0",
+    "publisher": "BrunoHenriqueMendesFerreira",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "Adds build tags.",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "contributions": [
+        {
+            "id": "build-tag-creation-task",
+            "type": "ms.azure-pipelines.pipeline-decorator",
+            "targets": [
+                "ms.azure-pipelines-agent-job.post-job-tasks"
+            ],
+            "properties": {
+                "template": "build-tag-creation-decorator.yml"
+            }
+        }
+    ],
+    "files": [
+        {
+            "path": "build-tag-creation-decorator.yml",
+            "addressable": true,
+            "contentType": "text/plain"
+        }
+    ]
+}
